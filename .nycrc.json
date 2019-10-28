@@ -1,0 +1,16 @@
+{
+  "include": [
+    "index.js",
+    "lib/**/*.js"
+  ],
+  "exclude": [
+    "node-tests",
+    "**/config/*"
+  ],
+  "reporter": [
+    "html",
+    "json",
+    "json-summary",
+    "lcov"
+  ]
+}
