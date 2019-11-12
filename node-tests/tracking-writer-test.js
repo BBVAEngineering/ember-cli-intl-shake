@@ -55,6 +55,7 @@ describe('TrackingWriter', () => {
 
 			await builder.build();
 
+			assert.ok(spy.args[0]);
 			assert.lengthOf(spy.args[0][0], 2);
 			assert.propertyVal(spy.args[0][0][0], 'relativePath', 'a.txt');
 			assert.propertyVal(spy.args[0][0][1], 'relativePath', 'b.txt');
@@ -82,6 +83,7 @@ describe('TrackingWriter', () => {
 
 			await builder.build();
 
+			assert.ok(spy.args[1]);
 			assert.lengthOf(spy.args[1][0], 1);
 			assert.propertyVal(spy.args[1][0][0], 'relativePath', 'a.txt');
 		});

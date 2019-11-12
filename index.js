@@ -20,10 +20,24 @@ module.exports = {
 
 		this.app = this._findHost();
 		this.options = Object.assign({
+			filters: [{
+				extensions: ['js'],
+				filter: require('./lib/filters/javascript')
+			}, {
+				extensions: ['hbs'],
+				filter: require('./lib/filters/handlebars')
+			}, {
+				extensions: ['json'],
+				filter: require('./lib/filters/json')
+			}],
 			files: {},
 			addons: {},
 			translationsDir: 'translations'
 		}, this.app.options['ember-cli-intl-shake']);
+	},
+
+	getExtensions() {
+		return this.options.filters.reduce((acc, filter) => [...acc, ...filter.extensions], []);
 	},
 
 	postprocessTree(type, tree) {
@@ -41,14 +55,16 @@ module.exports = {
 				})));
 		}
 
-		let intlTree = new Funnel(new MergeTrees(trees, { overwrite: true }), { include: ['**/*.js', '**/*.json', '**/*.hbs'] });
+		const includeExtensions = this.getExtensions().map((extension) => `**/*.${extension}`);
+
+		let intlTree = new Funnel(new MergeTrees(trees, { overwrite: true }), { include: includeExtensions });
 
 		intlTree = new Funnel(intlTree, {
 			include: this.options.files.include,
 			exclude: this.options.files.exclude
 		});
 
-		intlTree = new FilterLiterals(intlTree);
+		intlTree = new FilterLiterals(intlTree, { filters: this.options.filters });
 
 		intlTree = new ReduceLiterals([intlTree]);
 

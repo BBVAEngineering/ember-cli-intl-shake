@@ -80,6 +80,25 @@ default: `undefined`
 
 Directories to include in the literal shake to the app module.
 
+### `filters`
+
+type: `Array`
+default:
+```json
+[{
+  extensions: ['js'],
+  filter: require('./lib/filters/javascript')
+}, {
+  extensions: ['hbs'],
+  filter: require('./lib/filters/handlebars')
+}, {
+  extensions: ['json'],
+  filter: require('./lib/filters/json')
+}]
+```
+
+Filters and extensions to filter literals to shake translation files.
+
 ## Contribute
 
 If you want to contribute to this addon, please read the [CONTRIBUTING.md](CONTRIBUTING.md).
