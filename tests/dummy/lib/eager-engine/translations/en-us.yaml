@@ -1,0 +1,5 @@
+eager-engine:
+  template: 'Template'
+  javascript: 'Javascript'
+  json: 'JSON'
+  missing: 'Missing'

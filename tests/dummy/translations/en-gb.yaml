@@ -1,0 +1,21 @@
+dummy:
+  template: 'Template'
+  javascript: 'Javascript'
+  json: 'JSON'
+  missing: 'Missing'
+  directories: 'Directories'
+dummy-addon:
+  template: 'Template'
+  javascript: 'Javascript'
+  json: 'JSON'
+  missing: 'Missing'
+eager-engine:
+  template: 'Template'
+  javascript: 'Javascript'
+  json: 'JSON'
+  missing: 'Missing'
+lazy-engine:
+  template: 'Template'
+  javascript: 'Javascript'
+  json: 'JSON'
+  missing: 'Missing'
