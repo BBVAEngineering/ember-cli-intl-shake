@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.0.0...v1.0.1) (2019-11-13)
+
+
+### Bug Fixes
+
+* **write-file:** use mkdirp from fs-extra ([d710ae9](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/d710ae931840ef35f704b190197df56dbb32bdc2))
+
 # 1.0.0 (2019-11-12)
 
 
