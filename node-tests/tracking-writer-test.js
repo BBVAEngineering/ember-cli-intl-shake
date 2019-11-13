@@ -6,6 +6,14 @@ const Funnel = require('broccoli-funnel');
 const TrackingWriter = require('../lib/tracking-writer');
 const sinon = require('sinon');
 
+const WRITE_DELAY = 10;
+
+function timeout(time) {
+	return new Promise((resolve) => {
+		setTimeout(resolve, time);
+	});
+}
+
 describe('TrackingWriter', () => {
 	let input, builder;
 
@@ -71,11 +79,13 @@ describe('TrackingWriter', () => {
 			Dummy.prototype.processFiles = spy;
 
 			const tree = new Funnel(input.path());
-			const plugin = new Dummy([tree]);
+			const plugin = new Dummy([tree], { cacheInclude: [/txt/] });
 
 			builder = createBuilder(plugin);
 
 			await builder.build();
+
+			await timeout(WRITE_DELAY);
 
 			input.write({
 				'a.txt': 'b'
