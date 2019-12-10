@@ -31,7 +31,7 @@
     "acorn-walk": "^7.0.0",
     "async": "^3.1.0",
     "broccoli-caching-writer": "^3.0.3",
-    "broccoli-funnel": "^2.0.2",
+    "broccoli-funnel": "^3.0.1",
     "broccoli-merge-trees": "^3.0.2",
     "broccoli-persistent-filter": "^2.3.1",
     "broccoli-plugin": "^3.0.0",
