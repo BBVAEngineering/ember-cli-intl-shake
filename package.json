@@ -90,7 +90,7 @@
     "qunit-dom": "^0.9.0",
     "rimraf": "^3.0.0",
     "semantic-release": "^15.13.28",
-    "sinon": "^7.5.0"
+    "sinon": "^8.0.1"
   },
   "engines": {
     "node": "8.* || >= 10.*"
