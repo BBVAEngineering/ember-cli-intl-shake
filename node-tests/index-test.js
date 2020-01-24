@@ -54,7 +54,7 @@ async function assertContains(filePath, prop, val) {
 	const fileContent = await readFile(filePath, 'utf8');
 	const fileObject = JSON.parse(fileContent);
 
-	assert.nestedPropertyVal(fileObject, prop, val, `${filePath} contains ${prop} with ${val}`);
+	assert.deepNestedPropertyVal(fileObject, prop, val, `${filePath} contains ${prop} with ${val}`);
 }
 
 async function assertNotContains(filePath, prop) {
@@ -81,6 +81,9 @@ describe('When addon is enabled', function() {
 			await assertContains(translationFile, 'dummy.javascript', 'Javascript');
 			await assertContains(translationFile, 'dummy.json', 'JSON');
 			await assertContains(translationFile, 'dummy.directories', 'Directories');
+			await assertContains(translationFile, 'dummy.with', 'With');
+			await assertContains(translationFile, 'dummy.inflection.one', 'Singular');
+			await assertContains(translationFile, 'dummy.inflection.other', 'Plural');
 			await assertNotContains(translationFile, 'dummy.missing');
 		});
 
@@ -124,6 +127,9 @@ describe('When addon is enabled', function() {
 			await assertContains(translationFile, 'dummy.javascript', 'Javascript');
 			await assertContains(translationFile, 'dummy.json', 'JSON');
 			await assertContains(translationFile, 'dummy.directories', 'Directories');
+			await assertContains(translationFile, 'dummy.with', 'With');
+			await assertContains(translationFile, 'dummy.inflection.one', 'Singular');
+			await assertContains(translationFile, 'dummy.inflection.other', 'Plural');
 			await assertNotContains(translationFile, 'dummy.missing');
 		});
 

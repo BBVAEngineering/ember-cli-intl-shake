@@ -5,6 +5,12 @@ export const intl = [
 	'dummy.javascript'
 ];
 
+export const inflection = 'dummy.inflection';
+
+export const dummyWith = 'dummy.with';
+
+export const dumyWithDots = 'dummy.with.dots';
+
 export default Route.extend({
 	intl: service(),
 
