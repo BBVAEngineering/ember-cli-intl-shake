@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.0.1...v1.0.2) (2020-01-24)
+
+
+### Bug Fixes
+
+* **split-literals:** check partial literals from translations ([1ba3a82](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/1ba3a827771922be2e8597c574f9f63b7315ebfd))
+
 ## [1.0.1](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.0.0...v1.0.1) (2019-11-13)
 
 
