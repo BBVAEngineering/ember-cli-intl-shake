@@ -4,6 +4,11 @@ dummy:
   json: 'JSON'
   missing: 'Missing'
   directories: 'Directories'
+  with: 'With'
+  with.dots: 'With dots'
+  inflection:
+    one: 'Singular'
+    other: 'Plural'
 dummy-addon:
   template: 'Template'
   javascript: 'Javascript'
