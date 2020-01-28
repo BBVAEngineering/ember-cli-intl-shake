@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.0.3...v1.0.4) (2020-01-28)
+
+
+### Bug Fixes
+
+* **package:** move ember-addon to dev dependency ([fcb0fd0](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/fcb0fd054797d59e45755a066b81f71d4e10cd72))
+
 ## [1.0.3](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.0.2...v1.0.3) (2020-01-28)
 
 
