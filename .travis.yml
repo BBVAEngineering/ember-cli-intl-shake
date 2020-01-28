@@ -53,8 +53,6 @@ jobs:
       node_js: lts/erbium
     - env: EMBER_TRY_SCENARIO=ember-release
       node_js: lts/dubnium
-    - env: EMBER_TRY_SCENARIO=ember-release
-      node_js: lts/carbon
 
     - stage: "Release"
       script: skip
