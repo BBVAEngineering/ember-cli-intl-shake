@@ -1,7 +1,7 @@
 ---
 language: node_js
+os: linux
 node_js: stable
-sudo: false
 dist: trusty
 
 addons:
@@ -16,7 +16,6 @@ env:
     - JOBS=1
 
 jobs:
-  fail_fast: true
   allow_failures:
     - env: EMBER_TRY_SCENARIO=ember-canary
 
@@ -44,8 +43,8 @@ jobs:
         - codecov --file=coverage/lcov.info
 
     - stage: "Regression Tests"
-      env: EMBER_TRY_SCENARIO=ember-lts-3.4
-    - env: EMBER_TRY_SCENARIO=ember-lts-3.8
+      env: EMBER_TRY_SCENARIO=ember-lts-3.8
+    - env: EMBER_TRY_SCENARIO=ember-lts-3.12
     - env: EMBER_TRY_SCENARIO=ember-release
     - env: EMBER_TRY_SCENARIO=ember-beta
     - env: EMBER_TRY_SCENARIO=ember-canary
@@ -62,8 +61,7 @@ jobs:
       deploy:
         provider: script
         skip_cleanup: true
-        script:
-          - npx semantic-release
+        script: npx semantic-release
 
 before_install:
   - npm config set spin false
@@ -78,4 +76,3 @@ stages:
   - "Regression Tests"
   - name: "Release"
     if: branch = master
-

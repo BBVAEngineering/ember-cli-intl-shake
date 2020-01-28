@@ -26,9 +26,9 @@
     "validate-coverage": "test \"$(cat coverage/coverage-summary.json | json total.lines.total)\" -gt 0"
   },
   "dependencies": {
+    "@babel/parser": "^7.8.3",
+    "@babel/traverse": "^7.8.3",
     "@glimmer/syntax": "^0.44.0",
-    "acorn": "^7.1.0",
-    "acorn-walk": "^7.0.0",
     "async": "^3.1.0",
     "broccoli-caching-writer": "^3.0.3",
     "broccoli-funnel": "^2.0.2",
