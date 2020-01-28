@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.0.2...v1.0.3) (2020-01-28)
+
+
+### Bug Fixes
+
+* **filter:** change parser from acorn to babel ([8d955de](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/8d955dea7bdd181334f68b9f71de7ea114c36388))
+* **package:** drop node 8 support ([c73d726](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/c73d726c0d173c18ec41f70decc1a3c4390b686c))
+
 ## [1.0.2](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.0.1...v1.0.2) (2020-01-24)
 
 
