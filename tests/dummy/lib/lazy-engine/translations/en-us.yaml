@@ -3,3 +3,5 @@ lazy-engine:
   javascript: 'Javascript'
   json: 'JSON'
   missing: 'Missing'
+common:
+  javascript: 'Javascript'

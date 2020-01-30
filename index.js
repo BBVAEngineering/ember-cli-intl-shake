@@ -66,7 +66,7 @@ module.exports = {
 
 		intlTree = new FilterLiterals(intlTree, { filters: this.options.filters });
 
-		intlTree = new ReduceLiterals([intlTree]);
+		intlTree = new ReduceLiterals([intlTree], { common: this.app.name });
 
 		intlTree = new SplitTranslations([tree, intlTree], { translationsDir: this.options.translationsDir });
 
