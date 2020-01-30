@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-intl-shake",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Shake intl files using app literals",
   "keywords": [
     "ember-addon"

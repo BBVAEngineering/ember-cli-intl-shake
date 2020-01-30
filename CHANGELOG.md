@@ -1,3 +1,20 @@
+# [1.1.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.0.4...v1.1.0) (2020-01-30)
+
+
+### Bug Fixes
+
+* **split:** fix support for i18n pluralized literals ([d8c1bd6](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/d8c1bd6068036ead76019d204e52980791f10580))
+
+
+### Features
+
+* **reduce:** extract common literals to the app output json ([3c0bce4](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/3c0bce4e8a192eb6ef5b3e8ee25a6fa3e6cddc59))
+
+
+### Performance Improvements
+
+* **reduce:** filter out all literals not matching at least two words ([584876e](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/584876e46751aea4935417a0d6fbbfc8a9b4d4a0))
+
 ## [1.0.4](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.0.3...v1.0.4) (2020-01-28)
 
 
