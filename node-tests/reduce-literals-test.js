@@ -12,13 +12,15 @@ describe('ReduceLiterals', () => {
 		input = await createTempDir();
 		input.write({
 			dummy: {
-				'a.intl.json': JSON.stringify(['a', 'a']),
+				'a.intl.json': JSON.stringify(['label.a', 'label.a']),
 				dir: {
-					'ab.intl.json': JSON.stringify(['a', 'b'])
-				}
+					'ab.intl.json': JSON.stringify(['label.a', 'label.b']),
+					'ad.intl.json': JSON.stringify(['label.a', 'label.d'])
+				},
 			},
 			another: {
-				'c.intl.json': JSON.stringify(['c'])
+				'c.intl.json': JSON.stringify(['label.c']),
+				'd.intl.json': JSON.stringify(['label.d'])
 			}
 		});
 	});
@@ -31,7 +33,7 @@ describe('ReduceLiterals', () => {
 	context('when built for first time', () => {
 		it('reduce literals for each module', async() => {
 			const tree = new Funnel(input.path());
-			const plugin = new ReduceLiterals([tree]);
+			const plugin = new ReduceLiterals([tree], { common: 'dummy' });
 
 			builder = createBuilder(plugin);
 
@@ -39,15 +41,15 @@ describe('ReduceLiterals', () => {
 
 			const files = builder.read();
 
-			assert.equal(files.dummy['intl-literals.json'], JSON.stringify(['a', 'b']));
-			assert.equal(files.another['intl-literals.json'], JSON.stringify(['c']));
+			assert.equal(files.dummy['intl-literals.json'], JSON.stringify(['label.a', 'label.b', 'label.d']));
+			assert.equal(files.another['intl-literals.json'], JSON.stringify(['label.c']));
 		});
 	});
 
 	context('when building', () => {
 		it('reduce literals for each module', async() => {
 			const tree = new Funnel(input.path());
-			const plugin = new ReduceLiterals([tree]);
+			const plugin = new ReduceLiterals([tree], { common: 'dummy' });
 
 			builder = createBuilder(plugin);
 
@@ -55,7 +57,7 @@ describe('ReduceLiterals', () => {
 
 			input.write({
 				dummy: {
-					'a.intl.json': JSON.stringify(['a', 'b'])
+					'a.intl.json': JSON.stringify(['label.a', 'label.b'])
 				}
 			});
 
@@ -63,8 +65,8 @@ describe('ReduceLiterals', () => {
 
 			const files = builder.read();
 
-			assert.equal(files.dummy['intl-literals.json'], JSON.stringify(['a', 'b']));
-			assert.equal(files.another['intl-literals.json'], JSON.stringify(['c']));
+			assert.equal(files.dummy['intl-literals.json'], JSON.stringify(['label.a', 'label.b', 'label.d']));
+			assert.equal(files.another['intl-literals.json'], JSON.stringify(['label.c']));
 		});
 	});
 });

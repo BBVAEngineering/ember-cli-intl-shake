@@ -84,6 +84,7 @@ describe('When addon is enabled', function() {
 			await assertContains(translationFile, 'dummy.with', 'With');
 			await assertContains(translationFile, 'dummy.inflection.one', 'Singular');
 			await assertContains(translationFile, 'dummy.inflection.other', 'Plural');
+			await assertContains(translationFile, 'common.javascript', 'Javascript');
 			await assertNotContains(translationFile, 'dummy.missing');
 		});
 
@@ -114,6 +115,7 @@ describe('When addon is enabled', function() {
 			await assertContains(translationFile, 'lazy-engine.template', 'Template');
 			await assertContains(translationFile, 'lazy-engine.javascript', 'Javascript');
 			await assertContains(translationFile, 'lazy-engine.json', 'JSON');
+			await assertNotContains(translationFile, 'common.javascript');
 			await assertNotContains(translationFile, 'lazy-engine.missing');
 		});
 	});
@@ -130,6 +132,7 @@ describe('When addon is enabled', function() {
 			await assertContains(translationFile, 'dummy.with', 'With');
 			await assertContains(translationFile, 'dummy.inflection.one', 'Singular');
 			await assertContains(translationFile, 'dummy.inflection.other', 'Plural');
+			await assertContains(translationFile, 'common.javascript', 'Javascript');
 			await assertNotContains(translationFile, 'dummy.missing');
 		});
 
@@ -160,6 +163,7 @@ describe('When addon is enabled', function() {
 			await assertContains(translationFile, 'lazy-engine.template', 'Template');
 			await assertContains(translationFile, 'lazy-engine.javascript', 'Javascript');
 			await assertContains(translationFile, 'lazy-engine.json', 'JSON');
+			await assertNotContains(translationFile, 'common.javascript');
 			await assertNotContains(translationFile, 'lazy-engine.missing');
 		});
 	});

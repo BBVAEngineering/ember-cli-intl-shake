@@ -9,3 +9,5 @@ dummy:
   inflection:
     one: 'Singular'
     other: 'Plural'
+common:
+  javascript: 'Javascript'
