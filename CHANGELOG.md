@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.1.0...v1.2.0) (2020-02-03)
+
+
+### Features
+
+* allow namespaces as addon / engine name ([52eeae2](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/52eeae28b6a2570850588d6f08b6afe59e91efd3))
+
 # [1.1.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.0.4...v1.1.0) (2020-01-30)
 
 
