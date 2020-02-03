@@ -6,7 +6,7 @@ const Funnel = require('broccoli-funnel');
 const ReduceLiterals = require('../lib/reduce-literals');
 
 describe('ReduceLiterals', () => {
-	let input, builder;
+	let input, builder, modules;
 
 	beforeEach(async() => {
 		input = await createTempDir();
@@ -19,10 +19,13 @@ describe('ReduceLiterals', () => {
 				},
 			},
 			another: {
-				'c.intl.json': JSON.stringify(['label.c']),
-				'd.intl.json': JSON.stringify(['label.d'])
+				folder: {
+					'c.intl.json': JSON.stringify(['label.c']),
+					'd.intl.json': JSON.stringify(['label.d'])
+				}
 			}
 		});
+		modules = ['dummy', 'another/folder'];
 	});
 
 	afterEach(async() => {
@@ -33,7 +36,7 @@ describe('ReduceLiterals', () => {
 	context('when built for first time', () => {
 		it('reduce literals for each module', async() => {
 			const tree = new Funnel(input.path());
-			const plugin = new ReduceLiterals([tree], { common: 'dummy' });
+			const plugin = new ReduceLiterals([tree], { modules, common: 'dummy' });
 
 			builder = createBuilder(plugin);
 
@@ -42,14 +45,14 @@ describe('ReduceLiterals', () => {
 			const files = builder.read();
 
 			assert.equal(files.dummy['intl-literals.json'], JSON.stringify(['label.a', 'label.b', 'label.d']));
-			assert.equal(files.another['intl-literals.json'], JSON.stringify(['label.c']));
+			assert.equal(files.another.folder['intl-literals.json'], JSON.stringify(['label.c']));
 		});
 	});
 
 	context('when building', () => {
 		it('reduce literals for each module', async() => {
 			const tree = new Funnel(input.path());
-			const plugin = new ReduceLiterals([tree], { common: 'dummy' });
+			const plugin = new ReduceLiterals([tree], { modules, common: 'dummy' });
 
 			builder = createBuilder(plugin);
 
@@ -66,7 +69,7 @@ describe('ReduceLiterals', () => {
 			const files = builder.read();
 
 			assert.equal(files.dummy['intl-literals.json'], JSON.stringify(['label.a', 'label.b', 'label.d']));
-			assert.equal(files.another['intl-literals.json'], JSON.stringify(['label.c']));
+			assert.equal(files.another.folder['intl-literals.json'], JSON.stringify(['label.c']));
 		});
 	});
 });

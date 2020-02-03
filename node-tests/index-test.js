@@ -109,7 +109,7 @@ describe('When addon is enabled', function() {
 		});
 
 		it('generates translations file for lazy engines', async() => {
-			const translationFile = outputFilePath('translations', 'lazy-engine', 'en-gb.json');
+			const translationFile = outputFilePath('translations', '@lazy', 'engine', 'en-gb.json');
 
 			await assertFileExists(translationFile);
 			await assertContains(translationFile, 'lazy-engine.template', 'Template');
@@ -157,7 +157,7 @@ describe('When addon is enabled', function() {
 		});
 
 		it('generates translations file for lazy engines', async() => {
-			const translationFile = outputFilePath('translations', 'lazy-engine', 'en-us.json');
+			const translationFile = outputFilePath('translations', '@lazy', 'engine', 'en-us.json');
 
 			await assertFileExists(translationFile);
 			await assertContains(translationFile, 'lazy-engine.template', 'Template');

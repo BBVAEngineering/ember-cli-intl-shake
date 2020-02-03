@@ -1,5 +1,5 @@
 {
-  "name": "lazy-engine",
+  "name": "@lazy/engine",
   "keywords": [
     "ember-addon",
     "ember-engine"
