@@ -46,6 +46,7 @@ module.exports = {
 		}
 
 		const trees = buildTree(this.app, this.treeGenerator, this.options);
+		const modules = [this.app.name, ...this.app.project.addons.map((addon) => addon.name)];
 
 		if (this.options.directories && this.options.directories.include) {
 			trees.push(...this.options.directories.include.map((directory) =>
@@ -66,7 +67,7 @@ module.exports = {
 
 		intlTree = new FilterLiterals(intlTree, { filters: this.options.filters });
 
-		intlTree = new ReduceLiterals([intlTree], { common: this.app.name });
+		intlTree = new ReduceLiterals([intlTree], { modules, common: this.app.name });
 
 		intlTree = new SplitTranslations([tree, intlTree], { translationsDir: this.options.translationsDir });
 
