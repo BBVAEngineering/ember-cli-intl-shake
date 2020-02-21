@@ -65,11 +65,19 @@ module.exports = {
 			exclude: this.options.files.exclude
 		});
 
-		intlTree = new FilterLiterals(intlTree, { filters: this.options.filters });
+		intlTree = new FilterLiterals(intlTree, {
+			filters: this.options.filters
+		});
 
-		intlTree = new ReduceLiterals([intlTree], { modules, common: this.app.name });
+		intlTree = new ReduceLiterals([intlTree], {
+			modules,
+			common: this.app.name
+		});
 
-		intlTree = new SplitTranslations([tree, intlTree], { translationsDir: this.options.translationsDir });
+		intlTree = new SplitTranslations([tree, intlTree], {
+			translationsDir: this.options.translationsDir,
+			common: this.app.name
+		});
 
 		tree = new Funnel(tree, { exclude: [`${this.options.translationsDir}/**/*.json`] });
 

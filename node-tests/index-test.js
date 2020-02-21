@@ -74,7 +74,7 @@ describe('When addon is enabled', function() {
 
 	context('and translations are centralized on app', () => {
 		it('generates translations file for app', async() => {
-			const translationFile = outputFilePath('translations', 'dummy', 'en-gb.json');
+			const translationFile = outputFilePath('translations', 'en-gb.json');
 
 			await assertFileExists(translationFile);
 			await assertContains(translationFile, 'dummy.template', 'Template');
@@ -89,7 +89,7 @@ describe('When addon is enabled', function() {
 		});
 
 		it('generates translations file for addons', async() => {
-			const translationFile = outputFilePath('translations', 'dummy', 'en-gb.json');
+			const translationFile = outputFilePath('translations', 'en-gb.json');
 
 			await assertFileExists(translationFile);
 			await assertContains(translationFile, 'dummy-addon.template', 'Template');
@@ -99,7 +99,7 @@ describe('When addon is enabled', function() {
 		});
 
 		it('generates translations file for eager engines', async() => {
-			const translationFile = outputFilePath('translations', 'dummy', 'en-gb.json');
+			const translationFile = outputFilePath('translations', 'en-gb.json');
 
 			await assertFileExists(translationFile);
 			await assertContains(translationFile, 'eager-engine.template', 'Template');
@@ -109,7 +109,7 @@ describe('When addon is enabled', function() {
 		});
 
 		it('generates translations file for lazy engines', async() => {
-			const translationFile = outputFilePath('translations', '@lazy', 'engine', 'en-gb.json');
+			const translationFile = outputFilePath('engines-dist', '@lazy', 'engine', 'translations', 'en-gb.json');
 
 			await assertFileExists(translationFile);
 			await assertContains(translationFile, 'lazy-engine.template', 'Template');
@@ -122,7 +122,7 @@ describe('When addon is enabled', function() {
 
 	context('and translations are distributed on addons and engines', () => {
 		it('generates translations file for app', async() => {
-			const translationFile = outputFilePath('translations', 'dummy', 'en-us.json');
+			const translationFile = outputFilePath('translations', 'en-us.json');
 
 			await assertFileExists(translationFile);
 			await assertContains(translationFile, 'dummy.template', 'Template');
@@ -137,7 +137,7 @@ describe('When addon is enabled', function() {
 		});
 
 		it('generates translations file for addons', async() => {
-			const translationFile = outputFilePath('translations', 'dummy', 'en-us.json');
+			const translationFile = outputFilePath('translations', 'en-us.json');
 
 			await assertFileExists(translationFile);
 			await assertContains(translationFile, 'dummy-addon.template', 'Template');
@@ -147,7 +147,7 @@ describe('When addon is enabled', function() {
 		});
 
 		it('generates translations file for eager engines', async() => {
-			const translationFile = outputFilePath('translations', 'dummy', 'en-us.json');
+			const translationFile = outputFilePath('translations', 'en-us.json');
 
 			await assertFileExists(translationFile);
 			await assertContains(translationFile, 'eager-engine.template', 'Template');
@@ -157,7 +157,7 @@ describe('When addon is enabled', function() {
 		});
 
 		it('generates translations file for lazy engines', async() => {
-			const translationFile = outputFilePath('translations', '@lazy', 'engine', 'en-us.json');
+			const translationFile = outputFilePath('engines-dist', '@lazy', 'engine', 'translations', 'en-us.json');
 
 			await assertFileExists(translationFile);
 			await assertContains(translationFile, 'lazy-engine.template', 'Template');
