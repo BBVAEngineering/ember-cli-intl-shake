@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.2.0...v2.0.0) (2020-02-21)
+
+
+### Features
+
+* **split-translations:** respect same translations directory as source ([38ff7c5](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/38ff7c55afabe42b5e828bf1e6e39695cf512374))
+
+
+### BREAKING CHANGES
+
+* **split-translations:** Destination files had been changed.
+
 # [1.2.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.1.0...v1.2.0) (2020-02-03)
 
 
