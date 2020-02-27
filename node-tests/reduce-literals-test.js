@@ -36,7 +36,7 @@ describe('ReduceLiterals', () => {
 	context('when built for first time', () => {
 		it('reduce literals for each module', async() => {
 			const tree = new Funnel(input.path());
-			const plugin = new ReduceLiterals([tree], { modules, common: 'dummy' });
+			const plugin = new ReduceLiterals([tree], { modules });
 
 			builder = createBuilder(plugin);
 
@@ -45,14 +45,14 @@ describe('ReduceLiterals', () => {
 			const files = builder.read();
 
 			assert.equal(files.dummy['intl-literals.json'], JSON.stringify(['label.a', 'label.b', 'label.d']));
-			assert.equal(files.another.folder['intl-literals.json'], JSON.stringify(['label.c']));
+			assert.equal(files.another.folder['intl-literals.json'], JSON.stringify(['label.c', 'label.d']));
 		});
 	});
 
 	context('when building', () => {
 		it('reduce literals for each module', async() => {
 			const tree = new Funnel(input.path());
-			const plugin = new ReduceLiterals([tree], { modules, common: 'dummy' });
+			const plugin = new ReduceLiterals([tree], { modules });
 
 			builder = createBuilder(plugin);
 
@@ -69,7 +69,7 @@ describe('ReduceLiterals', () => {
 			const files = builder.read();
 
 			assert.equal(files.dummy['intl-literals.json'], JSON.stringify(['label.a', 'label.b', 'label.d']));
-			assert.equal(files.another.folder['intl-literals.json'], JSON.stringify(['label.c']));
+			assert.equal(files.another.folder['intl-literals.json'], JSON.stringify(['label.c', 'label.d']));
 		});
 	});
 });

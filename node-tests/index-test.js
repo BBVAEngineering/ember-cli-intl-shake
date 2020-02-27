@@ -115,7 +115,7 @@ describe('When addon is enabled', function() {
 			await assertContains(translationFile, 'lazy-engine.template', 'Template');
 			await assertContains(translationFile, 'lazy-engine.javascript', 'Javascript');
 			await assertContains(translationFile, 'lazy-engine.json', 'JSON');
-			await assertNotContains(translationFile, 'common.javascript');
+			await assertContains(translationFile, 'common.javascript', 'Javascript');
 			await assertNotContains(translationFile, 'lazy-engine.missing');
 		});
 	});
@@ -163,7 +163,7 @@ describe('When addon is enabled', function() {
 			await assertContains(translationFile, 'lazy-engine.template', 'Template');
 			await assertContains(translationFile, 'lazy-engine.javascript', 'Javascript');
 			await assertContains(translationFile, 'lazy-engine.json', 'JSON');
-			await assertNotContains(translationFile, 'common.javascript');
+			await assertContains(translationFile, 'common.javascript', 'Javascript');
 			await assertNotContains(translationFile, 'lazy-engine.missing');
 		});
 	});
