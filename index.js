@@ -70,8 +70,7 @@ module.exports = {
 		});
 
 		intlTree = new ReduceLiterals([intlTree], {
-			modules,
-			common: this.app.name
+			modules
 		});
 
 		intlTree = new SplitTranslations([tree, intlTree], {
