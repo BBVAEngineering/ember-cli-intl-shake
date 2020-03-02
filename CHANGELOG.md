@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v2.0.0...v2.1.0) (2020-03-02)
+
+
+### Features
+
+* **reduce-literals:** do not group same literals on app translations ([d2c6ddb](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/d2c6ddbdc0029d9b92ac0136b136d30572c14a49))
+
 # [2.0.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v1.2.0...v2.0.0) (2020-02-21)
 
 
