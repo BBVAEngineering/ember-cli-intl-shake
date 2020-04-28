@@ -5,6 +5,7 @@
   ],
   "dependencies": {
     "ember-cli-babel": "*",
-    "ember-cli-htmlbars": "*"
+    "ember-cli-htmlbars": "*",
+    "ember-intl": "*"
   }
 }
