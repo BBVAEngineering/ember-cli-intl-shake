@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v2.1.0...v2.1.1) (2020-04-28)
+
+
+### Bug Fixes
+
+* minimize built trees from addons ([5db7117](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/5db71178a817808b6dfbdaf45a8f4d22a9636cea))
+
 # [2.1.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v2.0.0...v2.1.0) (2020-03-02)
 
 
