@@ -46,6 +46,9 @@
     "fs-tree-diff": "^2.0.1",
     "hash-for-dep": "^1.5.1",
     "json-to-ast": "^2.1.0",
+    "merge-stream": "^2.0.0",
+    "stream-chain": "^2.2.4",
+    "stream-json": "^1.7.1",
     "strip-bom": "^4.0.0"
   },
   "devDependencies": {
