@@ -1,3 +1,14 @@
+# [2.2.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v2.1.1...v2.2.0) (2021-07-07)
+
+
+### Features
+
+* add stream deps ([ea40a0f](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/ea40a0f725387c945363a949079f9fe4adca1fde))
+* allow RegExp to filter addons ([d8dba02](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/d8dba02d8285ad179873910213f4c83c25e9cf81))
+* prevent storing file content in memory ([7727c23](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/7727c23d5b5d14bc257a9d85d091a4f24a31a26e))
+* use workers to reduce-literals ([548faeb](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/548faeb6dfa49948260d10e26c1cc1eb0f8109fd))
+* use workers to split-translations ([63862ff](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/63862ffc956b6b60853e98128171e8c5f982b20b))
+
 ## [2.1.1](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v2.1.0...v2.1.1) (2020-04-28)
 
 
