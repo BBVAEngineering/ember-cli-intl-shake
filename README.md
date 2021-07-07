@@ -50,14 +50,14 @@ Output directory where to find current i18n files.
 type: `Array`
 default: `undefined`
 
-Addons to include in the literal shake.
+Addons to include in the literal shake (`String` or `RegExp`).
 
 ### `addons.exclude`
 
 type: `Array`
 default: `undefined`
 
-Addons to exclude from the literal shake.
+Addons to exclude from the literal shake (`String` or `RegExp`).
 
 ### `files.include`
 

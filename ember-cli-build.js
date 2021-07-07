@@ -9,7 +9,10 @@ module.exports = function(defaults) {
 				include: [
 					'dummy-addon',
 					'eager-engine',
-					'@lazy/engine'
+					/^@lazy/,
+				],
+				exclude: [
+					/foo/
 				]
 			},
 			directories: {
