@@ -25,7 +25,11 @@ describe('ReduceLiterals', () => {
 				}
 			}
 		});
-		modules = ['dummy', 'another/folder'];
+
+		modules = {
+			dummy: ['dummy'],
+			'another/folder': ['another/folder']
+		};
 	});
 
 	afterEach(async() => {
