@@ -45,8 +45,7 @@ module.exports = {
 			return tree;
 		}
 
-		const trees = buildTree(this.app, this.treeGenerator, this.options);
-		const modules = [this.app.name, ...this.app.project.addons.map((addon) => addon.name)];
+		const { trees, modules } = buildTree(this.app, this.treeGenerator, this.options);
 
 		if (this.options.directories && this.options.directories.include) {
 			trees.push(...this.options.directories.include.map((directory) =>
