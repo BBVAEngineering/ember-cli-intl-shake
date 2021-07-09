@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v2.2.0...v2.3.0) (2021-07-09)
+
+
+### Features
+
+* improve performance for large apps ([c1ec3ee](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/c1ec3eef9e8f310bd218fdbe373373858829b6e9))
+
 # [2.2.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v2.1.1...v2.2.0) (2021-07-07)
 
 
