@@ -9,76 +9,100 @@ const SplitTranslations = require('./lib/split-translations');
 const WatchedDir = require('broccoli-source').WatchedDir;
 
 module.exports = {
-	name: require('./package').name,
+  name: require('./package').name,
 
-	isDevelopingAddon() {
-		return true;
-	},
+  isDevelopingAddon() {
+    return true;
+  },
 
-	included() {
-		this._super.included.apply(this, arguments);
+  included() {
+    this._super.included.apply(this, arguments);
 
-		this.app = this._findHost();
-		this.options = Object.assign({
-			filters: [{
-				extensions: ['js'],
-				filter: require('./lib/filters/javascript')
-			}, {
-				extensions: ['hbs'],
-				filter: require('./lib/filters/handlebars')
-			}, {
-				extensions: ['json'],
-				filter: require('./lib/filters/json')
-			}],
-			files: {},
-			addons: {},
-			translationsDir: 'translations'
-		}, this.app.options['ember-cli-intl-shake']);
-	},
+    this.app = this._findHost();
+    this.options = Object.assign(
+      {
+        filters: [
+          {
+            extensions: ['js'],
+            filter: require('./lib/filters/javascript'),
+          },
+          {
+            extensions: ['hbs'],
+            filter: require('./lib/filters/handlebars'),
+          },
+          {
+            extensions: ['json'],
+            filter: require('./lib/filters/json'),
+          },
+        ],
+        files: {},
+        addons: {},
+        translationsDir: 'translations',
+      },
+      this.app.options['ember-cli-intl-shake']
+    );
+  },
 
-	getExtensions() {
-		return this.options.filters.reduce((acc, filter) => [...acc, ...filter.extensions], []);
-	},
+  getExtensions() {
+    return this.options.filters.reduce(
+      (acc, filter) => [...acc, ...filter.extensions],
+      []
+    );
+  },
 
-	postprocessTree(type, tree) {
-		if (type !== 'all') {
-			return tree;
-		}
+  postprocessTree(type, tree) {
+    if (type !== 'all') {
+      return tree;
+    }
 
-		const { trees, modules } = buildTree(this.app, this.treeGenerator, this.options);
+    const { trees, modules } = buildTree(
+      this.app,
+      this.treeGenerator,
+      this.options
+    );
 
-		if (this.options.directories && this.options.directories.include) {
-			trees.push(...this.options.directories.include.map((directory) =>
-				new Funnel(new WatchedDir(directory), {
-					destDir: this.app.name,
-					annotation: `ember-cli-intl-shake:build-tree:${directory}`
-				})));
-		}
+    if (this.options.directories && this.options.directories.include) {
+      trees.push(
+        ...this.options.directories.include.map(
+          (directory) =>
+            new Funnel(new WatchedDir(directory), {
+              destDir: this.app.name,
+              annotation: `ember-cli-intl-shake:build-tree:${directory}`,
+            })
+        )
+      );
+    }
 
-		const includeExtensions = this.getExtensions().map((extension) => `**/*.${extension}`);
+    const includeExtensions = this.getExtensions().map(
+      (extension) => `**/*.${extension}`
+    );
 
-		let intlTree = new Funnel(new MergeTrees(trees, { overwrite: true }), { include: includeExtensions });
+    let intlTree = new Funnel(new MergeTrees(trees, { overwrite: true }), {
+      include: includeExtensions,
+    });
 
-		intlTree = new Funnel(intlTree, {
-			include: this.options.files.include,
-			exclude: this.options.files.exclude
-		});
+    intlTree = new Funnel(intlTree, {
+      include: this.options.files.include,
+      exclude: this.options.files.exclude,
+    });
 
-		intlTree = new FilterLiterals(intlTree, {
-			filters: this.options.filters
-		});
+    intlTree = new FilterLiterals(intlTree, {
+      filters: this.options.filters,
+    });
 
-		intlTree = new ReduceLiterals([intlTree], {
-			modules
-		});
+    intlTree = new ReduceLiterals([intlTree], {
+      modules,
+    });
 
-		intlTree = new SplitTranslations([tree, intlTree], {
-			translationsDir: this.options.translationsDir,
-			common: this.app.name
-		});
+    intlTree = new SplitTranslations([tree, intlTree], {
+      translationsDir: this.options.translationsDir,
+      common: this.app.name,
+    });
 
-		tree = new Funnel(tree, { exclude: [`${this.options.translationsDir}/**/*.json`] });
+    tree = new Funnel(tree, {
+      exclude: [`${this.options.translationsDir}/**/*.json`],
+    });
 
-		return new MergeTrees([tree, intlTree], { overwrite: true });
-	}
+    return new MergeTrees([tree, intlTree], { overwrite: true });
+  },
 };
