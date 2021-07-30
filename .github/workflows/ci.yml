@@ -61,7 +61,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Test
-        run: yarn ember try:one ${{ matrix.ember_try_scenario }}
+        run: yarn test:node
   release:
     if: github.ref == 'refs/heads/master'
     needs: [test]
