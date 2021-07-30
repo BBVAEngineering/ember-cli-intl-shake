@@ -21,20 +21,19 @@ module.exports = {
   },
   rules: {},
   overrides: [
-    // node files
     {
       files: [
+        '.commitlintrc.js',
         '.eslintrc.js',
         '.huskyrc.js',
-        '.commitlintrc.js',
         '.prettierrc.js',
         '.template-lintrc.js',
-        'ember-cli-build.js',
-        'index.js',
-        'testem.js',
         'blueprints/*/index.js',
         'config/**/*.js',
         'lib/**/*.js',
+        'ember-cli-build.js',
+        'index.js',
+        'testem.js',
         'tests/dummy/config/**/*.js',
       ],
       excludedFiles: [

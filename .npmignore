@@ -13,16 +13,11 @@
 /.eslintcache
 /.eslintignore
 /.eslintrc.js
+/.git/
 /.gitignore
 /.prettierignore
 /.prettierrc.js
 /.template-lintrc.js
-/.commitlintrc.js
-/.huskyrc.js
-/.nycrc.json
-/.releaserc
-/greenkeeper.json
-/jsconfig.json
 /.travis.yml
 /.watchmanconfig
 /bower.json
@@ -31,7 +26,6 @@
 /ember-cli-build.js
 /testem.js
 /tests/
-/node-tests/
 /yarn-error.log
 /yarn.lock
 .gitkeep

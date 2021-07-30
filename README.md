@@ -84,6 +84,7 @@ Directories to include in the literal shake to the app module.
 
 type: `Array`
 default:
+
 ```json
 [{
   extensions: ['js'],
@@ -103,16 +104,13 @@ Filters and extensions to filter literals to shake translation files.
 
 If you want to contribute to this addon, please read the [CONTRIBUTING.md](CONTRIBUTING.md).
 
-
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/BBVAEngineering/ember-cli-intl-shake/tags).
 
-
 ## Authors
 
 See the list of [contributors](https://github.com/BBVAEngineering/ember-cli-intl-shake/graphs/contributors) who participated in this project.
-
 
 ## License
 
