@@ -25,6 +25,8 @@ module.exports = {
     {
       files: [
         '.eslintrc.js',
+        '.huskyrc.js',
+        '.commitlintrc.js',
         '.prettierrc.js',
         '.template-lintrc.js',
         'ember-cli-build.js',
@@ -32,6 +34,7 @@ module.exports = {
         'testem.js',
         'blueprints/*/index.js',
         'config/**/*.js',
+        'lib/**/*.js',
         'tests/dummy/config/**/*.js',
       ],
       excludedFiles: [
@@ -54,6 +57,14 @@ module.exports = {
       // Test files:
       files: ['tests/**/*-test.{js,ts}'],
       extends: ['plugin:qunit/recommended'],
+    },
+    {
+      // Node test files:
+      files: ['node-tests/**/*-test.{js,ts}'],
+      env: {
+        mocha: true,
+        node: true,
+      },
     },
   ],
 };

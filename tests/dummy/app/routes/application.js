@@ -15,8 +15,8 @@ export const dummyWith = 'dummy.with';
 
 export const dumyWithDots = 'dummy.with.dots';
 
-export default Route.extend({
-  intl: service(),
+export default class ApplicationRooute extends Route {
+  @service intl;
 
   async beforeModel() {
     const translations = await fetch('/translations/dummy/en-us.json');
@@ -24,5 +24,5 @@ export default Route.extend({
     this.intl.addTranslations('en-us', await translations.json());
 
     return this.intl.setLocale(['en-us']);
-  },
-});
+  }
+}
