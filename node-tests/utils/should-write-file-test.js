@@ -6,52 +6,52 @@ const { createTempDir } = require('broccoli-test-helper');
 const shouldWriteFile = require('../../lib/utils/should-write-file');
 
 describe('shouldWriteFile', () => {
-	let input;
+  let input;
 
-	beforeEach(async() => {
-		input = await createTempDir();
-	});
+  beforeEach(async () => {
+    input = await createTempDir();
+  });
 
-	afterEach(async() => {
-		await input.dispose();
-	});
+  afterEach(async () => {
+    await input.dispose();
+  });
 
-	context('when file does not exist', () => {
-		it('returns true', async() => {
-			const filepath = path.join(input.path(), 'a.txt');
-			const ret = await shouldWriteFile(filepath, 'a');
+  context('when file does not exist', () => {
+    it('returns true', async () => {
+      const filepath = path.join(input.path(), 'a.txt');
+      const ret = await shouldWriteFile(filepath, 'a');
 
-			assert.ok(ret);
-		});
-	});
+      assert.ok(ret);
+    });
+  });
 
-	context('when file exists and content is the same', () => {
-		beforeEach(() => {
-			input.write({
-				'a.txt': 'a'
-			});
-		});
+  context('when file exists and content is the same', () => {
+    beforeEach(() => {
+      input.write({
+        'a.txt': 'a',
+      });
+    });
 
-		it('returns false', async() => {
-			const filepath = path.join(input.path(), 'a.txt');
-			const ret = await shouldWriteFile(filepath, 'a');
+    it('returns false', async () => {
+      const filepath = path.join(input.path(), 'a.txt');
+      const ret = await shouldWriteFile(filepath, 'a');
 
-			assert.notOk(ret);
-		});
-	});
+      assert.notOk(ret);
+    });
+  });
 
-	context('when file exists and content is different', () => {
-		beforeEach(() => {
-			input.write({
-				'a.txt': 'a'
-			});
-		});
+  context('when file exists and content is different', () => {
+    beforeEach(() => {
+      input.write({
+        'a.txt': 'a',
+      });
+    });
 
-		it('returns true', async() => {
-			const filepath = path.join(input.path(), 'a.txt');
-			const ret = await shouldWriteFile(filepath, 'b');
+    it('returns true', async () => {
+      const filepath = path.join(input.path(), 'a.txt');
+      const ret = await shouldWriteFile(filepath, 'b');
 
-			assert.ok(ret);
-		});
-	});
+      assert.ok(ret);
+    });
+  });
 });

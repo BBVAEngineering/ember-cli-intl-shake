@@ -1,10 +1,10 @@
-import Component from '@ember/component';
-import layout from '../templates/components/addon-component';
+import Component from '@glimmer/component';
+import { setComponentTemplate } from '@glimmer/manager';
+import template from '../templates/components/addon-component';
 
-export const intl = [
-	'dummy-addon.javascript'
-];
+export const intl = ['dummy-addon.javascript'];
 
-export default Component.extend({
-	layout
-});
+// eslint-disable-next-line
+export default class AddonComponent extends Component {}
+
+setComponentTemplate(template, AddonComponent);

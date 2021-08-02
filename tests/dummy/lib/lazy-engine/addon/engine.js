@@ -6,8 +6,8 @@ import config from './config/environment';
 const { modulePrefix } = config;
 
 const Eng = Engine.extend({
-	modulePrefix,
-	Resolver
+  modulePrefix,
+  Resolver,
 });
 
 loadInitializers(Eng, modulePrefix);
