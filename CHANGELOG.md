@@ -1,9 +1,8 @@
 # [2.4.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v2.3.0...v2.4.0) (2021-08-02)
 
-
 ### Features
 
-* upgrade Ember to v3.27 ([8181e11](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/8181e11dd060aafdffbbd79e79d152031c99bedd))
+- upgrade Ember to v3.27 ([8181e11](https://github.com/BBVAEngineering/ember-cli-intl-shake/commit/8181e11dd060aafdffbbd79e79d152031c99bedd))
 
 # [2.3.0](https://github.com/BBVAEngineering/ember-cli-intl-shake/compare/v2.2.0...v2.3.0) (2021-07-09)
 
