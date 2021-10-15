@@ -5,3 +5,5 @@ lazy-engine:
   missing: 'Missing'
 common:
   javascript: 'Javascript'
+label:
+  engine: 'lazy-engine'

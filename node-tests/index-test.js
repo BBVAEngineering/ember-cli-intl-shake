@@ -199,6 +199,7 @@ describe('When addon is enabled', function () {
         'eager-engine.javascript',
         'Javascript'
       );
+      await assertContains(translationFile, 'label.engine', 'eager-engine');
       await assertContains(translationFile, 'eager-engine.json', 'JSON');
       await assertNotContains(translationFile, 'eager-engine.missing');
     });
@@ -219,6 +220,7 @@ describe('When addon is enabled', function () {
         'lazy-engine.javascript',
         'Javascript'
       );
+      await assertContains(translationFile, 'label.engine', 'lazy-engine');
       await assertContains(translationFile, 'lazy-engine.json', 'JSON');
       await assertContains(translationFile, 'common.javascript', 'Javascript');
       await assertNotContains(translationFile, 'lazy-engine.missing');

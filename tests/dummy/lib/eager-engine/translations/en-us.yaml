@@ -3,3 +3,5 @@ eager-engine:
   javascript: 'Javascript'
   json: 'JSON'
   missing: 'Missing'
+label:
+  engine: 'eager-engine'
